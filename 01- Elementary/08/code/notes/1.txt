@@ -1,0 +1,16 @@
+TypeScript Enums
+----------------
+An enum is a special "class" that represents a group of constants <------------------ ***
+
+Enums come in 2 flavors string and numeric.
+
+...
+Enums can also contain strings.
+... more common  than numeric enums, ...
+
+enum Directions {
+    North = "North",
+    East = "East",
+    South = "South",
+    West = "West"
+}
