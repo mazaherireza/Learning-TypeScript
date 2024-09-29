@@ -1,0 +1,11 @@
+{
+  "name": "learning-ts",
+  "version": "1.0.0",
+  "description": "Learning TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w"
+  },
+  "author": "Reza Mazaheri",
+  "license": "ISC"
+}
