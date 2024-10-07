@@ -1,0 +1,14 @@
+Multi-dimensional Arrays
+------------------------
+...
+We can also declare multidimensional arrays: arrays of arrays (of some type).
+
+let arr: string[][] = [['str1', 'str2'], ['more', 'strings']];
+
+Think of the string[][] above as short for (string[])[], that is, an array where every element has type string[]. 
+
+The empty array ([]) is compatible with any array type: <---------------- **
+let names: string[] = []; // No type errors.
+let numbers: number[] = []; // No type errors.
+names.push('Isabella');  
+numbers.push(30)
