@@ -1,0 +1,52 @@
+Enums
+-----
+We use enums when we’d like to enumerate all the possible values that a variable could have. 
+
+enum Direction {
+  North,
+  South,
+  East,
+  West
+}
+
+There are many situations when we might want to limit the possible values of a variable. 
+For example, the code above defines the enum Direction, representing four compass directions: 
+Direction.North, Direction.South, Direction.East, and Direction.West. 
+Any other values, like Direction.Southeast, are not allowed. 
+
+Check out the example below:
+
+let whichWayToArcticOcean: Direction;
+whichWayToArcticOcean = Direction.North; // No type error.
+whichWayToArcticOcean = Direction.Southeast; // Type error: Southeast is not a valid value for the Direction enum.
+whichWayToArcticOcean = West; // Wrong syntax, we must use Direction.West instead. 
+
+As shown above, an enum type can be used in a type annotation like any other type.
+
+Under the hood, TypeScript processes these kinds of enum types using numbers. 
+Enum values are assigned a numerical value according to their listed order. 
+The first value is assigned a number of 0, the second a number of 1, and onwards.
+
+For example, if we set whichWayToArticOcean = Direction.North, then whichWayToArticOcean == 0 evaluates to true. 
+Furthermore, we can reassign whichWayToArticOcean to a number value, like whichWayToArticOcean = 2, and it does not raise a type error. 
+This is because Direction.North, Direction.South, Direction.East, and Direction.West are equal to 0, 1, 2, and 3, respectively.
+
+We can change the starting number, writing something like:
+
+enum Direction {
+  North = 7,
+  South,
+  East,
+  West
+}
+
+Here, Direction.North, Direction.South, Direction.East, and Direction.West are equal to 7, 8, 9, and 10, respectively.
+
+We can also specify all numbers separately, if needed:
+
+enum Direction {
+  North = 8,
+  South = 2,
+  East = 6,
+  West = 4
+}
