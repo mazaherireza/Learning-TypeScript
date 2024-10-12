@@ -1,0 +1,33 @@
+Generic Functions
+-----------------
+We can also use generics to create collections of typed functions. 
+
+Imagine we wanted to create a function that returns arrays filled with a certain value. 
+Let’s just write the JavaScript for now:
+
+function getFilledArray(value, n) {
+  return Array(n).fill(value);
+}
+
+Here, getFilledArray('cheese', 3) evaluates to ['cheese', 'cheese', 'cheese']. 
+No problem, right? 
+
+Well, we run into a problem when we try to specify the function's return type. 
+
+We know it should be an array of whatever value's type is, 
+do we have to write a separate type annotation for every type of value? 
+Nope. 
+
+Here, we are rescued by generic functions!
+
+function getFilledArray<T>(value: T, n: number): T[] {
+  return Array(n).fill(value);
+}
+
+The above code tells TypeScript to make sure that value and the returned array have the same type T. 
+
+In general, writing generic functions with function functionName<T> allows us to use T 
+within the type annotation as a type placeholder. 
+Later, when the function is invoked, T is replaced with the provided type.
+
+
