@@ -1,0 +1,25 @@
+Narrowing After a Type Guard
+----------------------------
+TypeScript's ability to infer types after a type guard stretches even further than inferring the type within an else statement. 
+TypeScript can also type narrow without an else statement, provided that there's a return statement within the type guard. 
+Take a look at this example:
+
+type Tea = {
+  steep: () => string;
+}
+ 
+type Coffee = {
+  pourOver: () => string;
+} 
+ 
+function brew(beverage: Coffee | Tea) {
+  if ('steep' in beverage) {
+    return beverage.steep();
+  } 
+  return beverage.pourOver();
+}
+
+In the conditional, we immediately return beverage.steep(). 
+Once we encounter a return statement, the function execution stops. 
+Any code that was meant to work with a beverage of type Tea will be executed and returned within the conditional. 
+TypeScript then infers that the code following the conditional must be of type Coffee.
