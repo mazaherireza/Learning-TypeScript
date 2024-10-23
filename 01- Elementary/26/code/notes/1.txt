@@ -1,0 +1,22 @@
+Extending Interfaces
+--------------------
+In TypeScript, it's not always enough to be able to compose types together. 
+Sometimes it's convenient to copy all the type members from one type into another type. 
+We can accomplish this with the extends keyword, like in this example:
+
+interface Shape {
+  color: string;
+}
+ 
+interface Square extends Shape {
+  sideLength: number;
+}
+ 
+const mySquare: Square = { sideLength: 10, color: 'blue' };
+
+In this example, the Square interface uses the extends keyword to copy all the type members from Shape into Square. 
+Therefore, when we declare a variable like mySquare, 
+both a sideLength property with type number and a color property of type string is required.
+
+Using extends can help us organize our code by abstracting out common type members into their own interface, 
+then copying them into more specific types.
