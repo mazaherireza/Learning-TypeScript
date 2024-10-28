@@ -1,7 +1,7 @@
 Void Return Type
 ----------------
 ... it is often preferred to use type annotations for functions, 
-even when those functions don’t return anything. 
+even when those functions don't return anything. 
 Example:
 
 function logGreeting(name: string) {
