@@ -4,7 +4,7 @@ When we declare a function in JavaScript, we often expect it to be invoked with 
 JavaScript does not share our expectations: 
 its type flexibility often allows functions to be invoked with unexpected argument types. 
 
-Even when this doesn’t result in thrown errors, there can be negative consequences:
+Even when this doesn't result in thrown errors, there can be negative consequences:
 
 function printLengthOfText(text) {
   console.log(text.length);
