@@ -10,19 +10,19 @@ multiline
 comment
 */
 
-But it’s common in TypeScript to see a third comment style: 
+But it's common in TypeScript to see a third comment style: 
 documentation comments. <----------------- **
 
 A documentation comment is denoted with the first line /** and a final line */. 
-It’s common for each line within the comment to start with an asterisk (*):
+It's common for each line within the comment to start with an asterisk (*):
 
 /**
 * This is a documentation comment
 */
 
-We place a function’s documentation comment in the code directly above the function declaration. 
+We place a function's documentation comment in the code directly above the function declaration. 
 We can use special tags within the comment to highlight certain aspects of the function. 
-We can use @param to describe each of the function’s parameters, 
+We can use @param to describe each of the function's parameters, 
 and we can use @return to describe what the function returns:
 
 /**
@@ -37,4 +37,3 @@ and we can use @return to describe what the function returns:
 function getSum(x: number, y: number): number {
   return x + y;
 }
-
