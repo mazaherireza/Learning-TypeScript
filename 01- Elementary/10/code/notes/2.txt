@@ -1,6 +1,6 @@
 Spread Syntax
 -------------
-Like the finest wines and cheeses, TypeScript’s tuples pair beautifully with JavaScript’s spread syntax. 
+Like the finest wines and cheeses, TypeScript's tuples pair beautifully with JavaScript's spread syntax. 
 This is most useful for function calls that use lots of arguments, like this:
 
 function gpsNavigate(startLatitudeDegrees:number, 
@@ -24,17 +24,16 @@ calculates a route from the Codecademy offices in New York City
 to selected coordinates in the Bermuda Triangle. 
 
 We all agree that this function call is awkward to read.
-Instead, we can use tuple variables that represent the starting and ending coordinates:
+Instead, we can use tuple variables that represent the starting and ending coordinates: <----------- **
 
 let codecademyCoordinates: [number, number, string, number, number, string] = [40, 43.2, 'N', 73, 59.8, 'W'];
 let bermudaTCoordinates: [number, number, string, number, number, string] = [25, 0 , 'N' , 71, 0, 'W'];
 
 These tuple type annotations guarantee that the types of the elements will be valid function parameters for gpsNavigate().
-Now, we use JavaScript’s spread syntax to write a very readable function call:
+Now, we use JavaScript's spread syntax to write a very readable function call:
 
 gpsNavigate(...codecademyCoordinates, ...bermudaTCoordinates);
 
 // And by the way, this makes the return trip really convenient to compute too:
 gpsNavigate(...bermudaTCoordinates, ...codecademyCoordinates);
 // If there is a return trip . . . 
-
