@@ -14,7 +14,7 @@ ID = 1;
 ID = '001';
 
 In this example, string | number is a union that allows ID to be a string or a number. 
-It’s more flexible than a single primitive type, but much more specific than the any type.
+It's more flexible than a single primitive type, but much more specific than the any type.
 
 Unions can be written anywhere a type value is defined, including function parameters:
 
