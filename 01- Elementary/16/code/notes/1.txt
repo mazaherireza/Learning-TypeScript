@@ -11,7 +11,7 @@ Since margin can be a string or a number,
 we may want to perform different logic in the getMarginLeft() function's body that 
 does one thing for strings and another for numbers. 
 
-To do this, we could implement a type guard. 
+To do this, we could implement a type guard. <-------------- *
 A type guard is a conditional that checks if a variable is a certain type, like this:
 
 function getMarginLeft(margin: string | number) {
@@ -32,10 +32,10 @@ if (typeof margin === 'string') {
 
 If we tried to call margin.toLowerCase() outside of the string type guard, 
 TypeScript would complain that the .toLowerCase() method does not exist on number types. 
-
 This error would occur because margin is typed as a string | number union.
 This concept is called type narrowing. 
-Type narrowing is when TypeScript can figure out what type a variable can be at a given point in our code. 
+
+Type narrowing is when TypeScript can figure out what type a variable can be at a given point in our code. <-------- ***
 In our examples, TypeScript has narrowed the type inside the type guard to only be a string. 
 
 Type narrowing allows us to use unions, then perform type-specific logic without TypeScript getting in the way.
