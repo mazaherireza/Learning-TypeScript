@@ -1,10 +1,11 @@
 Custom Types
 ------------
 Custom types are what make TypeScript really fun and useful, 
-because they enable type checking that’s tailored to your exact purposes.
+because they enable type checking that's tailored to your exact purposes.
 
 Actually, you have already studied an example of a custom type: tuples. 
-For example, the tuple type [string, string, number, boolean] is a custom type that can be used with data about a website’s users: 
+For example, the tuple type [string, string, number, boolean] 
+is a custom type that can be used with data about a website's users: 
 first name (string), last name (string), age (number), and whether they have a paid account (boolean).
 
 Pre-defined types are like ingredients: they can be used on their own. 
@@ -19,11 +20,10 @@ let myVar: compType;
 And they can be used as type annotations for functions:
 
 function testFn(param: compType): returnedCompType {
-  /*Function body*/
+  /* Function body */
 }
 
 And you can even do type inference with complex types:
 
 let inferredTypeVariable = testFn(myVar);
 // The variable inferredTypeVariable will have the type returnedCompType. 
-

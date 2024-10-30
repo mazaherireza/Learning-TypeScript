@@ -1,6 +1,6 @@
 Enums
 -----
-We use enums when we’d like to enumerate all the possible values that a variable could have. 
+We use enums when we'd like to enumerate all the possible values that a variable could have. 
 
 enum Direction {
   North,
@@ -28,8 +28,10 @@ Enum values are assigned a numerical value according to their listed order.
 The first value is assigned a number of 0, the second a number of 1, and onwards.
 
 For example, if we set whichWayToArticOcean = Direction.North, then whichWayToArticOcean == 0 evaluates to true. 
-Furthermore, we can reassign whichWayToArticOcean to a number value, like whichWayToArticOcean = 2, and it does not raise a type error. 
-This is because Direction.North, Direction.South, Direction.East, and Direction.West are equal to 0, 1, 2, and 3, respectively.
+Furthermore, we can reassign whichWayToArticOcean to a number value, like whichWayToArticOcean = 2, 
+and it does not raise a type error. 
+This is because Direction.North, Direction.South, Direction.East, and Direction.West 
+are equal to 0, 1, 2, and 3, respectively.
 
 We can change the starting number, writing something like:
 
