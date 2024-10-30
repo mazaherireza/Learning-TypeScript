@@ -3,7 +3,7 @@ Type Aliases
 One great way to customize the types in our programs is to use type aliases. 
 These are alternative type names that we choose for convenience. 
 
-We use the format "type <alias name> = <type>" <-------------------- **
+We use the format "type <alias name> = <type>" <------------- **
 
 type MyString = string;
 let myVar: MyString = 'Hi'; // Valid code.
