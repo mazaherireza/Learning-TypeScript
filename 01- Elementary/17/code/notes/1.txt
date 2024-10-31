@@ -1,7 +1,6 @@
 Unions and Arrays
 -----------------
 Unions are even more powerful when used in combination with arrays.
-
 For instance, we can represent time in TypeScript with a number or a string type. 
 If we had a list of dates in both types, we'd need an array that allows for string and number values. 
 
@@ -18,8 +17,6 @@ Above, the timesList variable is typed to allow string and number types as value
 If we try to add a value to timesList that is not either type, like with timesList.push(true), 
 TypeScript would display an error that boolean types are not allowed inside timesList.
 
-The parentheses are vitally important to type arrays correctly. 
+The parentheses are vitally important to type arrays correctly. <----------- **
 If we left out the parentheses and wrote string | number[], 
 that type would allow strings or arrays of only numbers.
-
-
