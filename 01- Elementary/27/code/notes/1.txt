@@ -1,4 +1,4 @@
-Index Signatures
+Index Signatures <------------ **
 ----------------
 When typing objects in TypeScript, sometimes it's not possible to know the property names for an object, 
 like when we get back information from an outside data source/API. 
@@ -17,17 +17,19 @@ The data might look like:
 }
 
 We know that all the property names will be strings, and all their values will be booleans, 
-but we don't know what the property names will be. 
-To type this object, we can utilize an index signature to type this object. 
+but we don't know what the property names will be. <------------------- ***
+..., we can utilize an index signature to type this object. 
 
 We could write this object's type like this:
 
 interface SolarEclipse {
-  [latitude: string]: boolean;
+  [latitude: string]: boolean; <--------------- ***
 } 
 
 In the SolarEclipse type, there's an index signature used for defining a variable property name of each type member. 
 
-The [latitude: string] syntax defines every property name within SolarEclipse as a string type with a value of type boolean. 
+The [latitude: string] syntax defines every property name within SolarEclipse 
+as a string type with a value of type boolean. 
+
 In the [latitude: string] syntax, the latitude name is purely for us, the developer, 
 as a human-readable name that will show up in potential error messages later.
