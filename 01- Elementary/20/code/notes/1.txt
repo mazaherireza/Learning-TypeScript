@@ -8,8 +8,7 @@ This process of compilation involves giving the TypeScript compiler the informat
 Therefore, when we give our variables specific types, these types are reinforced by the compiler/TypeScript.
 
 If TypeScript could only check types at compile-time, that would still be useful, 
-but it turns out that TypeScript can do so much more. 
-
+but it turns out ** that TypeScript can do so much more. 
 TypeScript has the ability to evaluate how our runtime code will perform, 
 and then infer variable types for us. 
 
@@ -34,4 +33,8 @@ Inside the body of formatDate(), there's a conditional that checks if date is a 
 If the condition is met, then TypeScript can infer that date must be a string type within the conditional. 
 It will allow us to call methods and properties that are allowed on string types. 
 This is called type narrowing. 
-Type narrowing is when TypeScript can infer more specific types based on the variable's surrounding code. <--------------- **
+Type narrowing is when TypeScript can infer more specific types based on the variable's surrounding code. <----------- **
+
+** turn out
+to happen in a particular way or to have a particular result,
+especially and unexpected one

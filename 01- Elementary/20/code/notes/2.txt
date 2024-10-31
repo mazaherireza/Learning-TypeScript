@@ -1,10 +1,10 @@
 Type guards
 -----------
 One way that TypeScript can narrow a type is with a conditional statement that checks if a variable is a specific type. 
-This pattern is called a type guard. <---------------- **
+This pattern is called a type guard. <------------ **
 
 Type guards can use a variety of operators that check for a variable's type. 
-One operator we can use is typeof. <------------ *
+One operator we can use is typeof. <----------- *
 For example:
 
 function formatDate(date: string | number) {
@@ -14,10 +14,9 @@ function formatDate(date: string | number) {
   }
 }
 
-In this example, TypeScript is able to infer that date must be a "string" 
-inside the conditional because typeof checked that date is a "string". 
+In this example, TypeScript is able to infer that date must be a "string" inside the conditional 
+because typeof checked that date is a "string". 
 TypeScript evaluated what our code would do at runtime and then inferred a more specific type for date.
 
 TypeScript can recognize typeof type guards that check for these specific values: 
 "string", "number", "boolean", and "symbol".
-
