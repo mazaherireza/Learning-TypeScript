@@ -13,7 +13,7 @@ function formatPadding(padding: string | number) {
   }
 }
 
-In the example above, the formatPadding() function can take in a value for CSS padding like the number 32 or the string "0 32px". 
+..., the formatPadding() function can take in a value for CSS padding like the number 32 or the string "0 32px". 
 Then a type guard is used to figure out how to format the padding argument.
 
 The type guard typeof padding === "string" tells TypeScript that padding within the if statement's block must be a string. 
