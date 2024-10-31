@@ -25,12 +25,12 @@ const catalog: Mail = ...
 In this example, we used both a type and an interface to create a typed object named Mail. 
 
 The syntaxes for type and interface are slightly different,
- since interface does not require an equals sign (=) before the typed object. 
+since interface does not require an equals sign (=) before the typed object. <----------- **
 
 Functionally, the two Mail types in the example are identical: 
 both will enforce the typed object at compile time when typing a variable.
 
-The biggest difference between interface and type is that interface can only be used to type objects, <--------------- **
+The biggest difference between interface and type is that interface can only be used to type objects, <---------- **
 while type can be used to type objects, primitives, and more. 
 As it turns out, type is more versatile and functional than interface. 
 So why would we use interface?
@@ -38,7 +38,5 @@ So why would we use interface?
 Sometimes, we don't want a type that can do everything. 
 We'd like our types to be constrained so we're more likely to write consistent code. 
 
-Since interface may only type objects, <-----------------**
+Since interface may only type objects, <----------- **
 it's a perfect match for writing object-oriented programs because these programs need many typed objects. 
-
-
