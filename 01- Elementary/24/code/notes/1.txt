@@ -1,6 +1,6 @@
 Interfaces and Classes
 ----------------------
-The interface keyword in TypeScript is especially good for adding types to a class. <------------ *
+The interface keyword in TypeScript is especially good for adding types to a class. <--------- **
 Since interface is constrained to typed objects and using class is a way to program with objects, 
 interface and class are a great match.
 
@@ -22,8 +22,9 @@ class OneSeries implements Robot {
 In the example, there's an interface named Robot and a class named OneSeries. 
 The implements keyword is then used to apply the type Robot to OneSeries.
 Notice that Robot has an .identify() method. 
-Since Robot is applied to OneSeries, OneSeries must include a method named .identify() that matches the Robot interface. 
+Since Robot is applied to OneSeries, 
+OneSeries must include a method named .identify() that matches the Robot interface. <---------- **
 Additionally, OneSeries can have methods and properties of its own, like the .answerQuestion() method.
 
-"implements" and "interface" allow us to create types that match a variety of class patterns, 
+implements and interface allow us to create types that match a variety of class patterns, 
 which makes interface a good tool for use on object-oriented programs.
