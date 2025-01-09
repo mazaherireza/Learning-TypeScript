@@ -12,3 +12,5 @@ const user: User = {
 };
 
 information(user, "firstName");
+
+// keyof is a keyword in TS which is used to extract the key type from an object type.

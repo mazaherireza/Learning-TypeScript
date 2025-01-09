@@ -14,7 +14,12 @@ class User {
 
 class Student extends User {
   discipline: string;
-  constructor(firstanme: string, lastname: string, gender: string, discipline: string) {
+  constructor(
+    firstanme: string,
+    lastname: string,
+    gender: string,
+    discipline: string
+  ) {
     super(firstanme, lastname, gender);
     this.discipline = discipline;
   }
