@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+label {
+  margin-bottom: 0.25rem;
+  font-size: small;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  font-size: small;
+}
+
+#app {
+  padding: 1rem;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#display {
+  margin-top: 1rem;
+  font-size: small;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 425px) {
+  #app {
+    width: 80%;
+  }
+}
