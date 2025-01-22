@@ -1,0 +1,74 @@
+... commands, packages, configs, ...
+
+Github ... boilerno
+
+Use this template <------------------- *
+Create a new repository
+-------------------------
+Shift, R click 
+Open command window here <-------------- **
+
+CMD
+----
+npm init -y
+npm init <---------- Create a package.json file
+
+TypeScript <----------- Package <------ ***
+local <------- **
+
+CMD
+---
+npm list -g <----------------- **
+
+npm un typescript -g 
+
+CMD
+--
+npm i -D typescript <--------------- Local
+
+TSC: TypeScript Compiler
+
+tsconfig.json <------------- **
+
+npx tsc --init <------------ Create tsconfig.json file
+
+tsconfig.json
+------------
+{
+  "compilerOptions": {
+     ...
+     "target": "ES2022"
+   }
+}
+
+"modlue": "commonjs" <--------------- *
+
+main.ts
+-------
+const fs = require("fs"); <--------- commenjs ... Server
+
+import fs from "fs"; <---------------- ES Module ... Client
+
+"rootDir": "./src/" <---------------- ** TS Files
+
+"resolveJsonModlue": true, <------------ *
+
+"outDir": "./build/" <------------ * build or dist
+
+import React from "react";
+import * as React from "react";
+
+... = React.useState();
+
+"allowSyntheticDefaultImports": true <---------------- *
+
+"esModuleInterop": true,
+
+"forceConsistentCasingInFileNames": true
+
+"strict": true,
+"noImplicitAny": true, <---------------- *
+
+.d.ts <----------- Declaration (interface, types)
+
+"skipLibCheck": true
