@@ -1,0 +1,32 @@
+@types/node
+
+TERMINAL
+--------
+npm i -D @types/node <------------ *
+
+TERMINAL
+--------
+npx tsc <------------------- *
+node dist/main
+
+TERMINAL
+--------
+npm i rimraf
+
+gitignore.io
+WebStorm + all, visualStudio, Node
+
+npm i -D nodemon ts-node
+
+nodemon <------ Hot Reload
+
+node src/main.ts <--------------- X
+ts-node src/main.ts <------------- *
+
+nodemon reload, automatically.
+ts-node is a TypeScript execution engine and REPL for Node.js.
+
+'ts-node' is not recognized as an internal or external command,
+operable program or batch file.
+
+npx ts-node src/main.ts <--------------- 
