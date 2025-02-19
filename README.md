@@ -2,4 +2,4 @@
 
 - Boilerplate
 - Elementary
-- With Maximilian Schwatzmüller
+- With Maximilian Schwarzmüller
