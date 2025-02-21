@@ -1,0 +1,14 @@
+Debugging with Visual Studio Code
+---------------------------------
+... extensions 
+ESLint
+
+Prettier - Code formatter
+... have a nicely formatted code
+
+Debugger for Chrome
+
+tsconfig.ts
+-----------
+...
+"sourceMap": true,
