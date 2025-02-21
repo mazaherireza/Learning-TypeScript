@@ -1,0 +1,26 @@
+tsconfig.json <--------------- a crucial file for managing this project.
+It essentially tells TS how it should compile these files. <------------ **
+
+tsconfig.json
+-------------
+...
+"exclude": ["analytics.ts"]
+... we want to exclude analytics.ts from compilation
+
+You can also work with wildcards ... 
+
+"exclude": ["*.dev.ts"]
+
+"exclude": ["node_modules"]
+
+... I don't want to compile any TS files I might have inside of node modules.
+
+... node_modules is automatically excluded as a default setting.
+
+"incldue": []
+... which files you want to include in the compilation process and 
+anything that's not listed here will not be compiled.
+
+"files"
+This allows you to point at the individual files so it's a bit like include 
+with the different that here you CAN'T specify whole folders what you want to include instead.
