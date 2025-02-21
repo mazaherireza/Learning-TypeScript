@@ -1,0 +1,11 @@
+Source Map
+----------
+sourceMap helps us with debugging and development <------------ **
+
+Dev Tools
+Source
+It would be nice if we would see the types of file here and not the JS files.
+
+If you set this(soureMap) to true and run the tsc command ... you see .js.map files being generated as well.
+... they basically act as a bridge which is understood by modern browsers and developer tools ... 
+connect the JS files to the input files.
