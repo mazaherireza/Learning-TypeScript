@@ -1,0 +1,26 @@
+outdir and rootdir 
+------------------
+... file lies around here in your root level project folder.
+
+The dist folder has the job of holding all the output, so all the JS files ...
+and the source folder might hold all our TS files.
+
+If we set outDir, we can tell the TS compiler where the created files should be stored.
+we could set this to dist
+
+"outDir": "./dist",
+
+JS files are placed in dist folder.
+
+index.html
+----------
+<script src="dist/app.js" defer></script>
+
+"rootDir": "./src",
+
+But with rootDir the TS compiler will not just look only at the source folder it also makes sure that 
+the project structure you set up there, is kept in this folder.
+
+... where your output files would be generated. 
+
+removeComments
