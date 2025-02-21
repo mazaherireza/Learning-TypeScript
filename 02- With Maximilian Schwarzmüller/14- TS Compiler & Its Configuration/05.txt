@@ -1,0 +1,34 @@
+Understanding TS Core Libs
+--------------------------
+lib is an option that allows you to specify which default objects and features TS notes.
+
+... working with the DOM ...
+
+app.ts
+------
+const button = document.querySelector('button');
+button.addEventListener(); <-------- ... TS doesn't know for sure whether we find a button here.
+
+button.addEventListener('click', () => {
+  console.log('Clicked!');
+})
+
+... button is something which has an addEventListener method? 	
+
+You could be writing your Node.js application with TS and there indeed this would all not work.
+
+... we can workaound that with an ! after ...
+...querySelector('button')!; <----- ... don't worry such a button will exist, we will get a value here.
+
+How does it ... such a document constant or variable available?
+
+If it's not set, the defaults depend on your JS target.
+... it assumes that all DOM APIs are available.
+
+If the lib options not set some defaults are assumed 
+
+"lib": [
+  "dom",
+  "es6",
+  "dom.iterable"
+]
