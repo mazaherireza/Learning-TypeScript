@@ -1,0 +1,10 @@
+... without pointing out a file, it just watches our entire project folder and recompile ...
+
+tsc --init
+
+... it will only required ONCE, 
+it will initialize this project in which you run this command as a TS project.
+
+tsconfig.json <----------- is the indicator for TS 
+
+tsc <---- it will tell TS to go ahead and compile all TS files 
