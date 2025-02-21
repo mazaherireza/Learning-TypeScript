@@ -1,0 +1,16 @@
+Stop Emitting Files on Compilation Errors
+-----------------------------------------
+
+"noEmitOnError" option <------------- **
+... the default is false.
+
+! mark
+Now even though we don't fully understand what's going on
+The problem here simply is that TS does not know ... have a button here 
+after all when querying for a button we might not get one.
+
+So even if we have an error, TS creates a JS file <------------- **
+
+false ... in your JS file, if you have an error.
+
+If you set this to true however what will happen is that problematic files will not be generated.
