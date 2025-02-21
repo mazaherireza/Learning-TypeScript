@@ -1,0 +1,13 @@
+... I don't have to rerun this command here.
+
+So to get rid of that we can enter watch mode.
+... we can tell TS to watch file and whenever that file changes, TS will recompile.
+--watch at the end
+
+tsc app.ts --watch or
+tsc app.ts -w
+
+DON'T quit this watch mode process whilst developing.
+You can quit thereafter via CTRL + C.
+
+The downside is that we still have to specifically target this file here... 	
