@@ -1,0 +1,4 @@
+More Configuration and Compilation Options
+------------------------------------------
+checkJs
+... not compile it  .. will still check the syntax ... report potential errors.
