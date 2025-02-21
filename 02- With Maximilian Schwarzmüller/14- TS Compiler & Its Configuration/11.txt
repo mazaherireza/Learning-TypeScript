@@ -1,0 +1,26 @@
+Code Quality Options
+--------------------
+...
+"noUnusedLocals": true,
+"noUnusedParameters": true,
+"noImplicitReturns": true.
+
+let appId = "ABZS1001"
+
+... allowed ... because TS can't know if you may be need that globally defined value in a numbers script file 
+so therefore this is allowed but in a function where there is no other place 
+where you could needed TS will complain now if you have unused code.
+
+noImplicitReturns means that we'll get an error if we have a function that sometimes 
+returns something and sometimes it does not.
+
+function add(n1: number, n2: number) {
+  if(n1 + n2 > 0) {
+    return n1 + n2;
+  }
+  return <---------- We at least have to deliberately not return anything here by adding the return keyword 
+                     just omitting it is not allowed here 
+}
+
+TS detects that not all branches in this function lead to return statement 
+and because of our setting that's not allowed.
