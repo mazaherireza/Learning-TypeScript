@@ -1,0 +1,7 @@
+Setting a Compilation Target
+----------------------------
+
+... target option ... this actually is set by default.
+... for which target JS version you want to compile the code.
+
+ES5 ... we don't have let and const.
