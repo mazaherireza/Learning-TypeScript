@@ -1,0 +1,105 @@
+Strict Compilation
+------------------
+... it enables ALL strict type checking options.
+
+noImplicitAny 
+
+function sendAnalytics(data) {
+  console.log(data)
+}
+
+sendAnalytics('The data')
+
+error TS7006: Parameter 'data' implicitly has an 'any' type.
+
+If I set this (noImplicitAny) to false.
+
+tsconfig.json
+-------------
+...
+"strict": true,
+"noImplicitAny": false,
+...
+
+... then this error goes away both in the IDE and when we compile the code.
+It ensures that we have to be clear about our parameters, about the values we're working within our code.
+
+function sendAnalytics(data) { 
+  <--------- Here, we don't give TS any information about the type of data we'll get as a parameter ...
+
+... this function gets declared first before this function executes.
+... we can fix this error by simply declaring the type and being clear about which type we use there ...
+
+analytics.ts
+------------
+let logged .... even though it gets a default type of any
+
+function sendAnalytics(data) {
+  console.log(data)
+  logged = true
+  logged = "Reza" <------------ you CAN do here because it is of type any.
+}
+
+sendAnalytics('The data')
+
+For variables it is OK, for parameters it is not OK.
+Why it is OK for variables?
+
+let logged <---------- here TS is able to track the values you assign.
+
+So TS is able to understand the flow of your code ... offer you don't need to be precise regarding the type here.
+
+... the function is defined before you call it.
+
+strictNullChecks 
+
+... it is actually related to our button selection ...
+
+const button = document.querySelector('button')!;
+
+... you can get rid of that error without adding the exclamation mark by setting strictNullChecks to false.
+
+... tell TS to be pretty well strict regarding how you access and work with 
+values that might potentially hold a null value and button here might be null.
+
+... if it fails to return a pointer at a DOM node then it will return null.
+
+If you have another scenario where you don't know for sure if it works and you just hope that it works.
+
+app.ts
+------
+const button = document.querySelector('button') 
+
+if(button) {
+  button.addEventListener('click', () => {})
+}
+
+strictFunctionTypes
+strictBindCallApply 
+
+... if you do work with bind call or apply ...
+
+app.ts
+------
+const button = document.querySelector('button');
+
+function clickHandler(message: string) {
+  console.log('Clicked! ' + message)
+}
+
+if(button) {
+  button.addEventListener('click', clickHandler)
+}
+
+... for some reasons we want to make sure that when executes we pass in certain arguments 
+or we set the this keyword in there to a certain value.
+
+... first argument takes what we want to bind the this keyword to ...
+clickHandler.bind(null)
+
+"strictBindCallApply": false
+... the error is gone.
+It basically checks on which function you're calling bind or apply and it checks if what you were setting up 
+here make sense.
+
+clickHandler.bind(null, "You're Welcome!")
