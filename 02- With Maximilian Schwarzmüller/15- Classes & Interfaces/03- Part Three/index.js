@@ -10,8 +10,12 @@ var Department = /** @class */ (function () {
         // ... one uniform of maniuplating employees. ... doing some verification or ...
         this.employees.push(employee);
     };
+    Department.prototype.logEmployees = function () {
+        console.log(this.employees);
+    };
     return Department;
 }());
 var hardware_network = new Department("Hardware & Network");
 hardware_network.describe();
 console.log(hardware_network.addEmployee("Milad Mohadmmadi"));
+hardware_network.logEmployees();

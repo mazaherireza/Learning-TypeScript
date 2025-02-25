@@ -12,8 +12,12 @@ class Department {
     // ... one uniform of maniuplating employees. ... doing some verification or ...
     this.employees.push(employee);
   }
+  logEmployees() {
+    console.log(this.employees);
+  }
 }
 
 const hardware_network = new Department("Hardware & Network");
 hardware_network.describe();
 console.log(hardware_network.addEmployee("Milad Mohadmmadi"));
+hardware_network.logEmployees();
