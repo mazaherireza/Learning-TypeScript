@@ -45,7 +45,7 @@ var ITDepartment = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ITDepartment.prototype, "setLastReport", {
+    Object.defineProperty(ITDepartment.prototype, "setLastProduct", {
         set: function (value) {
             this.lastProduct = value;
         },
@@ -62,5 +62,5 @@ var ITDepartment = /** @class */ (function (_super) {
 }(Department));
 var frontendGroup = new ITDepartment("IT_2002", []);
 frontendGroup.describe();
-frontendGroup.setLastReport = "Online Shop";
+frontendGroup.setLastProduct = "Online Shop";
 console.log(frontendGroup.getLastProduct);

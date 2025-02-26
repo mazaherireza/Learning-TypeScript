@@ -18,7 +18,7 @@ class ITDepartment extends Department {
   get getLastProduct() {
     return this.lastProduct;
   }
-  set setLastReport(value: string) {
+  set setLastProduct(value: string) {
     this.lastProduct = value;
   }
 
@@ -37,5 +37,5 @@ class ITDepartment extends Department {
 
 const frontendGroup = new ITDepartment("IT_2002", []);
 frontendGroup.describe();
-frontendGroup.setLastReport = "Online Shop";
+frontendGroup.setLastProduct = "Online Shop";
 console.log(frontendGroup.getLastProduct);
