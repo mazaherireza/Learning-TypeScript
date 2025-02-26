@@ -21,7 +21,7 @@ class ITDepartment extends Department {
     this.administrators.push(administrator);
   }
   logAdministrators() {
-    console.log(this.addAdministrator);
+    console.log(this.administrators);
   }
 }
 
