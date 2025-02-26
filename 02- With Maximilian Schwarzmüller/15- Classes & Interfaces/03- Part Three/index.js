@@ -17,5 +17,5 @@ var Department = /** @class */ (function () {
 }());
 var hardware_network = new Department("Hardware & Network");
 hardware_network.describe();
-console.log(hardware_network.addEmployee("Milad Mohadmmadi"));
+console.log(hardware_network.addEmployee("Milad Mohammadi"));
 hardware_network.logEmployees();
