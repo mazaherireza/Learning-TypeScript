@@ -4,7 +4,7 @@ class Department {
    TS provides 3 access modifiers to class properties and methods:
    private, protected, and public ... 
   */
-  constructor(private _id: string, public title: string) {}
+  constructor(private readonly _id: string, public title: string) {}
 
   describe(this: Department) {
     console.log(`Department: ${this.title} with id: ${this._id}`);
