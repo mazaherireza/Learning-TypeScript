@@ -5,6 +5,5 @@ interface _Error {
 
 const error: _Error = {
   id: "ER_800800",
-  email: "Erro 80",
   username: "Must start with a character.",
 };
