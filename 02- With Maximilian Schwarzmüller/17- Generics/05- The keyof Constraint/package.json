@@ -1,0 +1,11 @@
+{
+  "name": "learning-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Reza Mazaheri",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
