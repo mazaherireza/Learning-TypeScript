@@ -7,6 +7,7 @@
 // Decorators in general are all about classes.
 // ... how many arguments depends on where you use the decorator.
 function Logger(constructor: Function) {
+  // I won't call it directly.
   console.log("Logger ...");
   console.log(constructor);
 }
