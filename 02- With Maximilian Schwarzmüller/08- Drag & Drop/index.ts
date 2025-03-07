@@ -1,3 +1,20 @@
+const AutoBind = function (
+  _1: any,
+  _2: string,
+  descriptor: PropertyDescriptor
+) {
+  // ... methods in the end are just properties, properties which hold functions.
+  const { value: originalMethod } = descriptor;
+  const adjustedDescriptor: PropertyDescriptor = {
+    configurable: true,
+    get() {
+      const boundFn = originalMethod.bind(this);
+      return boundFn;
+    },
+  };
+  return adjustedDescriptor;
+};
+
 class ProjectInput {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
@@ -51,9 +68,10 @@ class ProjectInput {
     console.log(this.titleInputElement.value);
   }
 
+  @AutoBind
   private configure() {
-    // this.element.addEventListener("submit", this.submitHandler);
-    this.element.addEventListener("submit", this.submitHandler.bind(this));
+    this.element.addEventListener("submit", this.submitHandler);
+    // this.element.addEventListener("submit", this.submitHandler.bind(this));
   }
 
   private attach() {
