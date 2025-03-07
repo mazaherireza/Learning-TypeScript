@@ -2,6 +2,8 @@ class ProjectInput {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
   element: HTMLFormElement;
+  titleInputElement: HTMLInputElement;
+  descriptionElement: HTMLInputElement;
 
   constructor() {
     this.templateElement = document.getElementById(
@@ -27,7 +29,31 @@ class ProjectInput {
       true
     );
     this.element = importedNode.firstElementChild as HTMLFormElement;
+    this.element.id = "user-input";
+    this.titleInputElement = this.element.querySelector(
+      "#title"
+    ) as HTMLInputElement;
+
+    this.descriptionElement = this.element.querySelector(
+      "#description"
+    ) as HTMLInputElement;
+    this.configure();
     this.attach();
+  }
+
+  private submitHandler(event: Event) {
+    event.preventDefault();
+    // this <------ not point to the class actually.
+    /*
+      When we bind something to an event ... the method ... will have this bound to something else.
+      ... current target of the event.
+    */
+    console.log(this.titleInputElement.value);
+  }
+
+  private configure() {
+    // this.element.addEventListener("submit", this.submitHandler);
+    this.element.addEventListener("submit", this.submitHandler.bind(this));
   }
 
   private attach() {
