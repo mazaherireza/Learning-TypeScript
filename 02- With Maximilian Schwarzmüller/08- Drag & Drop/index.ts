@@ -110,6 +110,10 @@ class ProjectList {
     this.element = importedNode.firstElementChild as HTMLElement;
     this.element.id = `${this.type}-projects`;
     state.addListener((projects: Project[]) => {
+    const relevantProjects = projects.filter(project => {
+      if(this.type == Status.Done) return project.status == Status.Done
+      else return project.status == Status.Is_Doing
+    })
       this.assignedProjects = projects;
       this.renderProjects();
     });
@@ -121,6 +125,7 @@ class ProjectList {
     const listItems = document.querySelector(
       `${this.type}-projects-list`
     )! as HTMLUListElement;
+    listItems.innerHTML = ""
     for (const projectItem of this.assignedProjects) {
       const listItem = document.createElement("li");
       listItem.textContent = projectItem.title;
