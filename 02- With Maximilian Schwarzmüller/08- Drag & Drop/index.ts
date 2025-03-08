@@ -1,3 +1,16 @@
+enum Status {
+  Is_Doing = "IS_DOING",
+  Done = "DONE",
+}
+
+class Project {
+  constructor(
+    public title: string,
+    public description: string,
+    public status: Status
+  ) {}
+}
+
 interface Validatable {
   value: string | number;
   required?: boolean;
@@ -40,9 +53,12 @@ const AutoBind = function (
   return adjustedDescriptor;
 };
 
+// ... we don't care about any value the listener function might return
+type Listener = (items: Project[]) => void;
+
 class State {
-  private listeners: any[] = [];
-  private projects: any[] = [];
+  private listeners: Listener[] = [];
+  private projects: Project[] = [];
   private static instance: State;
   // ... the private constructor to guarantee that this is a singleton class
   private constructor() {}
@@ -56,15 +72,13 @@ class State {
   }
 
   addProject(title: string, description: string) {
-    this.projects.push({
-      title,
-      description,
-    });
+    const project = new Project(title, description, Status.Is_Doing);
+    this.projects.push(project);
     // 1. How do we call addProject ... from inside the submitHandler? ...
     for (const listener of this.listeners) listener([...this.projects]);
   }
 
-  addListener(listenerFn: Function) {
+  addListener(listenerFn: Listener) {
     this.listeners.push(listenerFn);
     /*
       The idea is that whenever something changes like ... add a new project,
@@ -80,9 +94,9 @@ class ProjectList {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
   element: HTMLElement;
-  assignedProjects: any[];
+  assignedProjects: Project[];
 
-  constructor(private type: "doing" | "done") {
+  constructor(private type: Status) {
     this.templateElement = document.getElementById(
       "project-list"
     )! as HTMLTemplateElement;
@@ -95,7 +109,7 @@ class ProjectList {
     );
     this.element = importedNode.firstElementChild as HTMLElement;
     this.element.id = `${this.type}-projects`;
-    state.addListener((projects: any[]) => {
+    state.addListener((projects: Project[]) => {
       this.assignedProjects = projects;
       this.renderProjects();
     });
@@ -225,7 +239,7 @@ class ProjectInput {
 }
 
 const prjInput = new ProjectInput();
-const activeProjects = new ProjectList("doing");
+const activeProjects = new ProjectList(Status.Is_Doing);
 /*
   You shouldn't use undefind as a return type on functions, instead use void.
   f(): [string] | void {
