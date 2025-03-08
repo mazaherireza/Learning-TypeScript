@@ -40,25 +40,78 @@ const AutoBind = function (
   return adjustedDescriptor;
 };
 
+class State {
+  private listeners: any[] = [];
+  private projects: any[] = [];
+  private static instance: State;
+  // ... the private constructor to guarantee that this is a singleton class
+  private constructor() {}
+
+  // Subscription pattern
+
+  static getInstance() {
+    if (this.instance) return this.instance;
+    this.instance = new State();
+    return this.instance;
+  }
+
+  addProject(title: string, description: string) {
+    this.projects.push({
+      title,
+      description,
+    });
+    // 1. How do we call addProject ... from inside the submitHandler? ...
+    for (const listener of this.listeners) listener([...this.projects]);
+  }
+
+  addListener(listenerFn: Function) {
+    this.listeners.push(listenerFn);
+    /*
+      The idea is that whenever something changes like ... add a new project,
+      we call all listener functions.
+    */
+  }
+}
+
+// ... always work with the exact same object
+const state = State.getInstance();
+
 class ProjectList {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
   element: HTMLElement;
+  assignedProjects: any[];
+
   constructor(private type: "doing" | "done") {
     this.templateElement = document.getElementById(
       "project-list"
     )! as HTMLTemplateElement;
 
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
-
+    this.assignedProjects = [];
     const importedNode = document.importNode(
       this.templateElement.content,
       true
     );
     this.element = importedNode.firstElementChild as HTMLElement;
     this.element.id = `${this.type}-projects`;
+    state.addListener((projects: any[]) => {
+      this.assignedProjects = projects;
+      this.renderProjects();
+    });
     this.attach();
     this.renderContent();
+  }
+
+  private renderProjects() {
+    const listItems = document.querySelector(
+      `${this.type}-projects-list`
+    )! as HTMLUListElement;
+    for (const projectItem of this.assignedProjects) {
+      const listItem = document.createElement("li");
+      listItem.textContent = projectItem.title;
+      listItems.appendChild(listItem);
+    }
   }
 
   private renderContent() {
@@ -154,6 +207,7 @@ class ProjectInput {
     const input = this.gatherUserInput();
     if (Array.isArray(input)) {
       const [title, description] = input;
+      state.addProject(title, description);
     }
     console.log(this.titleElement.value);
     this.clearForm();
@@ -171,7 +225,7 @@ class ProjectInput {
 }
 
 const prjInput = new ProjectInput();
-const activeProjects = new ProjectList("doing")
+const activeProjects = new ProjectList("doing");
 /*
   You shouldn't use undefind as a return type on functions, instead use void.
   f(): [string] | void {
