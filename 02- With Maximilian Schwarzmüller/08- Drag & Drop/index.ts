@@ -1,3 +1,28 @@
+interface Validatable {
+  value: string | number;
+  required?: boolean;
+  minLength?: number;
+  maxLength?: number;
+  min?: number;
+  max?: number;
+}
+
+function validate(input: Validatable) {
+  let isValid = true;
+  if (input.required)
+    isValid = isValid && input.value.toString().trim().length !== 0;
+  // ... even if minLength is set to 0
+  if (input.minLength != null && typeof input.value == "string")
+    isValid = isValid && input.value.length >= input.minLength;
+  if (input.maxLength != null && typeof input.value == "string")
+    isValid = isValid && input.value.length <= input.maxLength;
+  if (input.min != null && typeof input.value == "number")
+    isValid = isValid && input.value >= input.min;
+  if (input.max != null && typeof input.value == "number")
+    isValid = isValid && input.value <= input.max;
+  return isValid;
+}
+
 const AutoBind = function (
   _1: any,
   _2: string,
@@ -63,10 +88,27 @@ class ProjectInput {
     this.formElement.reset();
   }
 
-  private gatherUserInput(): [string, string] {
+  private gatherUserInput(): [string, string] | void {
     const title = this.titleElement.value;
     const description = this.descriptionElement.value;
-    return [title, description];
+
+    const titleValidatable: Validatable = {
+      value: title,
+      required: true,
+      minLength: 8,
+      maxLength: 80,
+    };
+
+    const descriptionValidatable: Validatable = {
+      value: description,
+      required: false,
+      minLength: 8,
+      maxLength: 800,
+    };
+
+    if (validate(titleValidatable) && validate(descriptionValidatable))
+      return [title, description];
+    else return 
   }
 
   private submitHandler(event: Event) {
