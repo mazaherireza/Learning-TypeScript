@@ -40,6 +40,39 @@ const AutoBind = function (
   return adjustedDescriptor;
 };
 
+class ProjectList {
+  templateElement: HTMLTemplateElement;
+  hostElement: HTMLDivElement;
+  element: HTMLElement;
+  constructor(private type: "doing" | "done") {
+    this.templateElement = document.getElementById(
+      "project-list"
+    )! as HTMLTemplateElement;
+
+    this.hostElement = document.getElementById("app")! as HTMLDivElement;
+
+    const importedNode = document.importNode(
+      this.templateElement.content,
+      true
+    );
+    this.element = importedNode.firstElementChild as HTMLElement;
+    this.element.id = `${this.type}-projects`;
+    this.attach();
+    this.renderContent();
+  }
+
+  private renderContent() {
+    const listId = `${this.type}-projects-list`;
+    this.element.querySelector("ul")!.id = listId;
+    this.element.querySelector("h2")!.textContent =
+      this.type.toUpperCase() + " Projects  ";
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement("beforeend", this.element);
+  }
+}
+
 class ProjectInput {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
@@ -108,7 +141,7 @@ class ProjectInput {
 
     if (validate(titleValidatable) && validate(descriptionValidatable))
       return [title, description];
-    else return 
+    else return;
   }
 
   private submitHandler(event: Event) {
@@ -138,7 +171,7 @@ class ProjectInput {
 }
 
 const prjInput = new ProjectInput();
-
+const activeProjects = new ProjectList("doing")
 /*
   You shouldn't use undefind as a return type on functions, instead use void.
   f(): [string] | void {
