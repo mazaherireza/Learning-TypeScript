@@ -162,7 +162,11 @@ class ProjectItem
     this.renderContent();
   }
   @AutoBind
-  dragStartHandler(event: DragEvent) {}
+  dragStartHandler(event: DragEvent) {
+    event.dataTransfer!.setData("text/plain", this.project.title);
+    // ... how the cursor will look like.
+    event.dataTransfer!.effectAllowed = "move";
+  }
 
   dragEndHandler(_: DragEvent) {}
 
@@ -190,11 +194,17 @@ class ProjectList
     this.renderContent();
   }
   @AutoBind
-  dragOverHandler(_: DragEvent) {
-    const listElement = this.element.querySelector("ul")!;
-    listElement.classList.add("droppable");
+  dragOverHandler(event: DragEvent) {
+    if (event.dataTransfer && event.dataTransfer.types[0] == "text/plain") {
+      event.preventDefault();
+      const listElement = this.element.querySelector("ul")!;
+      listElement.classList.add("droppable");
+    }
   }
-
+   /*
+     ... the drop event will only trigger on an element if in the dragover handler
+     on that same element ... call preventDefault.
+   */
   dropHandler(_: DragEvent) {}
 
   @AutoBind
