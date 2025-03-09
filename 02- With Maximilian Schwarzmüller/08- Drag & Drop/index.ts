@@ -1,3 +1,14 @@
+interface Draggable {
+  dragStartHandler(event: DragEvent): void;
+  dragEndHandler(event: DragEvent): void;
+}
+
+interface DragTarget {
+  dragOverHandler(event: DragEvent): void;
+  dropHandler(event: DragEvent): void;
+  dragLeaveHandler(event: DragEvent): void;
+}
+
 enum Status {
   Is_Doing = "IS_DOING",
   Done = "DONE",
@@ -134,7 +145,15 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   abstract renderContent(): void;
 }
 
-class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+/*
+  An interface cannot just be used to define a custom object type,
+  ... contract on a class.
+*/
+
+class ProjectItem
+  extends Component<HTMLUListElement, HTMLLIElement>
+  implements Draggable
+{
   private project: Project;
   constructor(hostId: string, project: Project) {
     super("single-project", hostId, false);
@@ -142,7 +161,14 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
     this.configure();
     this.renderContent();
   }
+  @AutoBind
+  dragStartHandler(event: DragEvent) {}
+
+  dragEndHandler(_: DragEvent) {}
+
   configure() {
+    this.element.addEventListener("dragstart", this.dragStartHandler)
+    this.element.addEventListener("dragend", this.dragEndHandler)
     this.element.querySelector("h2")!.textContent = this.project.title;
     this.element.querySelector("h3")!.textContent = this.project.description;
   }
