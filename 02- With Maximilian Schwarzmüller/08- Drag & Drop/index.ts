@@ -99,6 +99,18 @@ class State extends SuperState<Project> {
     const project = new Project(title, description, Status.Is_Doing);
     this.projects.push(project);
     // 1. How do we call addProject ... from inside the submitHandler? ...
+    this.updateListeners();
+  }
+
+  moveProject(title: string, newStatus: Status) {
+    const project = this.projects.find((project) => project.title == title);
+    if (project && project.status !== newStatus) {
+      project.status = newStatus;
+      this.updateListeners();
+    }
+  }
+
+  private updateListeners() {
     for (const listener of this.listeners) listener([...this.projects]);
   }
 }
@@ -201,11 +213,18 @@ class ProjectList
       listElement.classList.add("droppable");
     }
   }
-   /*
+  /*
      ... the drop event will only trigger on an element if in the dragover handler
      on that same element ... call preventDefault.
    */
-  dropHandler(_: DragEvent) {}
+  @AutoBind
+  dropHandler(event: DragEvent) {
+    const title = event.dataTransfer!.getData("text/plain");
+    state.moveProject(
+      title,
+      this.type == Status.Done ? Status.Is_Doing : Status.Done
+    );
+  }
 
   @AutoBind
   dragLeaveHandler(_: DragEvent) {
