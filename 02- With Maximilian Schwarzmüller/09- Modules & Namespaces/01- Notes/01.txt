@@ -1,0 +1,16 @@
+... connected by TS or by the browser or by some third party build tool and not by you.
+By merging them all into one file during development.
+
+What are our options when we want to split code into multiple files?
+... 3 options for that.
+
+...
+For bigger projects we have 2 main options.
+... namespace and file bundling.
+namespace <------ a TS feature ... add special code to your code 
+group code to gather below a namespace and then import namespaces into other files
+
+ES6 imports and exporst (ES6 modules)
+... download separately which means more HTTP requests ... therefore you can bundle files together 
+to work on multiple files during development but ship a single file for production
+but you need third party tools for that
