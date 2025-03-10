@@ -44,4 +44,12 @@ export class State extends SuperState<Project> {
   }
 }
 
+console.log("EXPORTED!");
 export const state = State.getInstance();
+
+/*
+  How often does it run?
+  One per import statement or once for the entire app? <------------ **
+  It runs once, when the file is imported for the first time by any other file.
+  If another file then imports that same file again, it does not run again. <--------- **
+*/
