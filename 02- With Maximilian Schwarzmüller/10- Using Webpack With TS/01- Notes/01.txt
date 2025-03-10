@@ -2,14 +2,14 @@
 Network tab
 We see a bunch of HTTP requests.
 ... waterfall on the right.
-Every HTTP request that needs to be made, of course takes a litte time.
+Every HTTP request that needs to be made, of course takes a little time.
 ... takes time to download the files ... 
 Every HTTP request has like a base overhead, a base duration it always takes.
 
 ... setting up the request, doing the work on a server which serves the file ...
 that all take some time.
 
-... reduce the amoutf of HTTP requests ...
+... reduce the amount of HTTP requests ...
 
 Webpack
 ... a tool that will help us bundle our files together.
@@ -20,4 +20,4 @@ Webpack is a bundling & "Build Orchestration" Tool
 ... optimize our code, ... allows us to add more build steps ... 
 
 "Normal" Setup                                            With Webpack
-"External" development server needer                      More build steps can be added easily
+"External" development server needed                      More build steps can be added easily
