@@ -1,1 +1,25 @@
+... third party libraries that help us set up a project workflow and configuration 
+that makes development very efficient for us.
+
 npm install --save-dev webpack webpack-cli webpack-dev-server typescript ts-loader
+
+... --save-dev ... development only dependency ...
+
+... webpack is the heart of this entire setup ...
+... allows us to plug in certain functionalities to bundle our code ... transrom our code ...
+... both, transform our code to JS, ... emit a bundled JS file and Webpack is able to that ...
+
+... Webpack-cli to run Webpack commands in our project 
+... Webpack-dev-server to have built-in development server which starts Webpack under the hood
+... watches our files for changes, automatically triggers Webpack to recompile when something changes 
+... serves our page.
+
+... we installed TS globally on our machine, which is why we are able to run tsc -w
+It is also a good practice to also install a copy of TS per project ... <------------ **
+... for this project you get a specific TS version, the advantage ...
+if you've ever change your global TS version, you don't break your project version, 
+if they were breaking changes in TS itself, so we can lock in a specific version of TS for a project.
+
+... ts-loader ... work together with Webpack.
+... tells Webpack how to convert TS code to JS ...
+... so Webpack is able to do both compile our code with the help of ts-loader ... bundle ...
