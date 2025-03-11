@@ -1,0 +1,58 @@
+... to tell Webpack what to do with TS files, we need to add a new entry to the configuration object.
+
+webpack.config.js
+-----------------
+...
+module.exports = {
+  ...
+  devtool: "inline-source-map", <------ ... generated source maps are ready 
+  ... wire up correctly the bundle it generaes 
+  module: { <----  ... in the end, it's just a file.
+    rules: [ 
+     {
+       test: /\.ts$/,
+       ... what Webpack should do with those files,
+       use: 'ts-loader' <----- ... a loader Webpack should use 
+       ... a loader is a package that tells Webpack how to deal with certain files
+
+       exclude: /node_modules/
+     }     
+   }
+   resolve: { <-------- We tell Webpack, which file extensions it adds to the imports it finds.
+     extensions: [".ts", ".js"] <---- Webpack will look for such files and then bundle all files 
+     that have these extensions.
+   }
+  }
+}
+
+
+tsconfig.json
+------------
+...
+"compilerOptions": {
+  ...
+  "sourceMap": true <-------- ** 
+
+--------------------
+How do we use Webpack?
+...
+package.json
+------------
+...
+"scripts": {
+  ...
+  "build": "webpack"
+},
+...
+
+CMD
+---
+npm run build
+
+In dist folder
+  bundle.js file <----------- Optimized code 
+
+index.html
+----------
+...
+<script type="module" src="dist/bundle.js"></script>
