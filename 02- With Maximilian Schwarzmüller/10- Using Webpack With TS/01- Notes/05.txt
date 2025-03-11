@@ -1,0 +1,34 @@
+... webpack-dev-server
+
+package.json
+------------
+...
+"scripts": {
+  "start": "wepback-dev-server", <------------ *
+  ...
+}
+
+CMD
+---
+npm start
+
+... recompiles 
+
+In webpack-dev-server mode, the bundle is generated in memory only, 
+... it's now actually written to the disk ... reload page, ... crashes.
+The problem just is things are not wired up correctly at the moment	
+
+webpack.config.js
+-----------------
+...
+module.exports = {
+  mode: "development",
+  entry: "./src/index.ts",
+  ...
+  output: {
+    ...
+    publicPath: "dist" <--------- Is needed for webpack-dev-server
+
+... by default webpack-dev-server serves and index.html file 
+... doesn't make the connection to the dist folder correctly which is why we have to inform
+webpack-dev-server with publicPath where to find our assets 
