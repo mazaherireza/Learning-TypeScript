@@ -20,4 +20,7 @@ Webpack is a bundling & "Build Orchestration" Tool
 ... optimize our code, ... allows us to add more build steps ... 
 
 "Normal" Setup                                            With Webpack
+
+Multiple .ts files & imports (HTTP requests)              Code bundles, less imports required
+Unoptimized code 					  Optimized code, less code to download
 "External" development server needed                      More build steps can be added easily
