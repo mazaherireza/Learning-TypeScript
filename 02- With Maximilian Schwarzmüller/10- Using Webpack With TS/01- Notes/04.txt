@@ -6,7 +6,7 @@ webpack.config.js
 module.exports = {
   ...
   devtool: "inline-source-map", <------ ... generated source maps are ready 
-  ... wire up correctly the bundle it generaes 
+  ... wire up correctly the bundle it generates 
   module: { <----  ... in the end, it's just a file.
     rules: [ 
      {
