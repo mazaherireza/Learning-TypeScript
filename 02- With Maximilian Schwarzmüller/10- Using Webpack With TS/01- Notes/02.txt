@@ -16,7 +16,7 @@ npm install --save-dev webpack webpack-cli webpack-dev-server typescript ts-load
 
 ... we installed TS globally on our machine, which is why we are able to run tsc -w
 It is also a good practice to also install a copy of TS per project ... <------------ **
-... for this project you get a specific TS version, the advantage ...
+... for this project, you get a specific TS version, the advantage ...
 if you've ever change your global TS version, you don't break your project version, 
 if they were breaking changes in TS itself, so we can lock in a specific version of TS for a project.
 
