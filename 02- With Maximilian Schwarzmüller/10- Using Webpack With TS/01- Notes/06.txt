@@ -1,0 +1,47 @@
+... we want to prepare our code to upload it to a server ... served to our end users.
+... a different workflow ... 
+
+... we tell Webpack to look it (webpack.config.prod.js file), ...
+
+webpack.config.prod.js
+----------------------
+...
+module.exports = {
+  mode: "production" <--------- Do these optimizations, minify our code and so on.
+
+... get rid of publicPath
+   devtool: "none" <------ To not generate any source maps here
+
+  ... add plugins entry.
+  plugins: [ <------- Extra extensions ... add to Webpack workflow ... be applied to the entire output.
+    // automatically deletes everything in the dist folder before a new output is writtern there.    
+  ]
+
+... rules and modules are applied on per file level, plugins are applied to the general workflow.
+... add a plugin which automatically deletes everything in the dist folder before a new output
+is writtern there ... we always just have the latest most recent output in dist folder ...
+
+CMD
+---
+install --save-dev clean-webpack-plugin <------- Clean up the dist folder whenever we rebuild our project.
+
+const CleanPlugin = require("clean-webpack-plugin");
+...
+plugins: [
+  new CleanPlugin.CleanWebpackPlugin() <---- Before Webpack writes something to dist folder,
+                                       it will clear everything that is in there.
+]		
+
+package.json
+-----------
+...
+"scripts": { 
+  ...
+  "build": "webpack --config webpack.config.prod.js" <--- ... use this prod file (this production configuration file)
+
+CMD
+---
+npm run build <-------- build app for production
+
+... this (bundle.js file) together with index.html files and app.css file are what you put onto a server ...
+deploy your application 
