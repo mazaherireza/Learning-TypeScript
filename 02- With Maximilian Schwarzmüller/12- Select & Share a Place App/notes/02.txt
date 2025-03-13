@@ -1,0 +1,8 @@
+npm install --save axios
+
+... we actaully got built in TS support, ... node_modules ... axios package
+... there is index.d.ts file ... already bundled their library to gather with such a TS translation package
+...
+enCodeURL() <--- ...converts string ot a URL compatible string
+
+... tell TS what we expect to be in the response ... get method is a generic method

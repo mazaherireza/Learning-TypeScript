@@ -1,0 +1,27 @@
+{
+  "name": "learning-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Reza Mazaheri",
+  "devDependencies": {
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.17.16",
+    "axios": "^1.8.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.2.2"
+  }
+}

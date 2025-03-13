@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  padding: 1rem;
+}
+
+button[type="submit"] {
+  cursor: pointer;
+}
+
+div#map {
+  width: 80%;
+  height: 22rem;
+  margin: 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin: 1.5rem auto;
+}

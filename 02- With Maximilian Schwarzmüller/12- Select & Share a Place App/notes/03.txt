@@ -1,0 +1,30 @@
+Google JS Maps
+Maps JavaScript API
+
+index.html
+----------
+...
+<script src="https://maps.googleapis.com/..." async defer></script> <---- Above your scripts 
+
+... it's not published to NPM
+
+SDK (Software Development Kit)
+
+const map = new google <------- It will be available globally because ... JS SDK we importing
+but TS doesn't know this.
+
+declare keyword
+...
+... compile whithout issues and it only crashes in production.
+... we want TS support.
+
+types google maps <----------- Key search
+
+... 
+We didn't install the Google Maps package through NPM but we can still install types 
+for that package through NPM.
+
+CMD
+---
+npm install --save-dev @types/googlemaps
+ 
