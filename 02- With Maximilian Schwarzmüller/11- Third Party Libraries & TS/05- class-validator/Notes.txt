@@ -1,0 +1,10 @@
+class-validator ... really utilizes TS, it builds up on the concept of TS decorators.
+... add validation rules with the help of some decorators inside of a class.
+
+CMD
+---
+npm install class-validator --save 
+
+... to use this package we have ot add a couple of decorators to the models ...
+... where we want to validate certain properties.
+
