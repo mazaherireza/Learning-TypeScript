@@ -1,0 +1,5 @@
+... we utilize third party libraries so that we don't always have to reinvent the wheel on our own
+but can add certian functionalities to our porject and then focus on our core business logic.
+
+Normal libraries & using them with TS
+TS-specific libraries
