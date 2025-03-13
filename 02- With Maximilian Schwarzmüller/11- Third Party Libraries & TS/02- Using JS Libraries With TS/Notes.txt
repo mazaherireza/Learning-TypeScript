@@ -1,0 +1,70 @@
+Using JS Libraries With TS!
+---------------------------
+...
+npm i --save lodash
+
+... thanks to our Webpack setup, we can just import it into our code files and utilize it.
+
+index.ts
+--------
+import _ from "lodash" <------- "Could not find a declaration file for module "lodash"."
+
+... lodash is built with Vanilla JS and it's built for Vanilla JS.
+... node_modules ...
+... lodash source code ... no TS code.
+The problem is TS doesn't understand what's in this package ...
+
+tsconfig.json 
+-------------
+...
+"noEmitOnError": false, <----------- **
+
+... unfortunatley TS doesn't understand it, because lodash uses JS not TS.
+
+You want to use a certain third part library and it's only built for JS 
+and hence you get errors ... 
+
+... we can use any JS library in any TS project, we just have to translate it to TS
+and thankfully it's possible.
+
+package.json
+-------------
+...
+"noEmitOnError": true, <----------- **
+
+... how we can tell TS about lodash and about what it offers.
+
+You can install a so-called types of a third part library.
+If you search for a lodash types ... npm package ... @types/lodash 
+
+Installation
+npm install --save @types/lodash
+ 
+Github repository ...
+... DefinitelyTyped <------------------ **
+... .d.ts <---------- declaration files ... they don't contain any actual logic 
+
+shuffle.d.ts
+------------
+import { shuffle } from "./index";
+export = shuffle;
+
+... these files simply provide a translation from plain JS to TS.
+... define the types you use 
+
+... using such a types package is the solution.
+
+CMD
+---
+npm install --save-dev @types/lodash
+
+... these packages which are always named @types and then the package name.
+
+package.json
+------------
+...
+"devDependencies": {
+  "@types/lodash": ...
+...
+
+... library types <--------- Key search
