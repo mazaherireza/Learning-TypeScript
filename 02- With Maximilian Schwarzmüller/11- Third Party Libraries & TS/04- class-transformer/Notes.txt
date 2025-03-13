@@ -1,0 +1,42 @@
+... class transformer ... class validator ...
+...
+product.model.ts
+----------------
+class Product {
+  title: string;
+  price: number;
+  
+  constructor(t: string, p: number) {
+    this.title = t;
+    this.price = p;
+  }
+
+  getInformation() {
+    return [this.title, `$${this.price}`];
+  }
+}
+
+... you might be downloading some data ... from a server
+... JSON data ... parse 
+
+const productList = [] <--- they're not instances of our product model
+
+... when you get data as JSON, it has no attached data like to which constructor function
+in your front-end code it belongs ... server doesn't know that.
+
+... JSON is a format that just transmits basic data ...
+
+const loadedProducts = products.map(product => {
+  return new Product(product.title, product.price);
+)}
+
+for(const product of loadedProducts) 
+  console.log(product.getInformation());
+
+... class transformer package .. 
+
+Installation
+npm install class-transformer --save
+npm install reflect-metadata --save
+
+import reflect-metadata ... root entry file
