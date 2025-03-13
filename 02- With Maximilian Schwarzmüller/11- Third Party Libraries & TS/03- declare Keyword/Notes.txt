@@ -1,0 +1,21 @@
+What do you do if you have a library where you can't install types as we did it for Lodash?
+
+index.html
+----------
+...
+<script>
+  var GLOBAL = "Something"; <----- will be available globally ... added to the global Window object 
+</script>
+
+index.ts
+---------
+...
+console.log(GLOBAL); <--------- Utilize from inside TS code.
+...
+In such cases you have ... in TS and ... declare command.
+
+declare var GLOBAL: any; <------- This tells TS don't worry, it will exist.
+
+"declare" allows us to declare TS features or variables where you know that they exist
+or let TS know about packages global variables in general which TS can't know but you as a developer 
+know that they will be there.
