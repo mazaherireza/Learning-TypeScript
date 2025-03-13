@@ -5,6 +5,6 @@ CMD
 ---
 npm install class-validator --save 
 
-... to use this package we have ot add a couple of decorators to the models ...
+... to use this package we have to add a couple of decorators to the models ...
 ... where we want to validate certain properties.
 
