@@ -1,0 +1,3 @@
+... a todo-list component ...
+
+... the .tsx extension will be added automatically by the build workflow we're using.

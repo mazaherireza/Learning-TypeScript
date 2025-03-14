@@ -1,0 +1,4 @@
+We can start our development ... npm start <------------ *
+This is a process we should keep on running because this will watch our files for changes
+and if something changes, it will recompile the TS code to JS code, recompile JSX to JS
+and in the end build your React application and serve it on local host 3000

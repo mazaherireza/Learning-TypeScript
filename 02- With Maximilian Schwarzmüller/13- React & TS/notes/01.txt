@@ -1,0 +1,8 @@
+... we need a project setup which is capable of both handling React code ... understanding TS
+... compiling TS to JS 
+
+... replace the project name with a . so that it doesn't creat a new sub folder and creates the project in that
+but instead it uses this folder.
+
+... tsx files where you can not just write TS code ... JSX code ... special React JS syntax
+where you write HTML markup inside of your TS
