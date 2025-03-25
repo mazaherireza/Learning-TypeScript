@@ -1,17 +1,21 @@
 "use strict";
-const teacher = new Teacher.Teacher("Hassan", "Khotanlou", "Computer Engineering");
+const teacher = new Teacher.Teacher(
+  "Hassan",
+  "Khotanlou",
+  "Computer Engineering"
+);
 console.log(teacher.getFullname());
 var Teacher;
 (function (Teacher_1) {
-    class Teacher {
-        constructor(prenom, nom, department) {
-            this.firstName = prenom;
-            this.lastName = nom;
-            this.department = department;
-        }
-        getFullname() {
-            return `${this.firstName} ${this.lastName}`;
-        }
+  class Teacher {
+    constructor(prenom, nom, department) {
+      this.firstName = prenom;
+      this.lastName = nom;
+      this.department = department;
     }
-    Teacher_1.Teacher = Teacher;
+    getFullname() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+  Teacher_1.Teacher = Teacher;
 })(Teacher || (Teacher = {}));
