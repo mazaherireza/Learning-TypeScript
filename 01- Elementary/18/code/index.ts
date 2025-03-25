@@ -14,10 +14,6 @@ class User {
   get getFavourites() {
     return this.favourites;
   }
-
-  set setFavourites(favourites: string[]) {
-    this.favourites = favourites;
-  }
 }
 
 class Student extends User {
