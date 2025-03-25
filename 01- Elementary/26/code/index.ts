@@ -2,8 +2,8 @@ interface User {
   [index: string]: string;
 }
 
-function information<T extends User, U extends keyof User>(user: T, name: U) {
-  console.log(`${user[name]}`);
+function information<U extends User, K extends keyof User>(user: U, key: K) {
+  console.log(`${user[key]}`);
 }
 
 const user: User = {
