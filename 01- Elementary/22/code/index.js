@@ -1,7 +1,5 @@
-"use strict";
-const user = {
-    firstName: "Reza",
-    lastName: "Mazaheri",
-    gender: "Male",
+var user = {
+  firstName: "Reza",
+  lastName: "Mazaheri",
 };
 console.log(user.firstName);
