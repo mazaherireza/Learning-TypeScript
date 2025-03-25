@@ -1,8 +1,13 @@
+enum Gender {
+  Male = "Male",
+  Female = "Female",
+}
+
 class User {
   firstname: string;
   lastname: string;
-  gender: string;
-  constructor(firstname: string, lastname: string, gender: string) {
+  gender: Gender;
+  constructor(firstname: string, lastname: string, gender: Gender) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.gender = gender;
@@ -17,7 +22,7 @@ class Student extends User {
   constructor(
     firstanme: string,
     lastname: string,
-    gender: string,
+    gender: Gender,
     discipline: string
   ) {
     super(firstanme, lastname, gender);
