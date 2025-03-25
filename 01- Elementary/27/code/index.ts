@@ -22,4 +22,4 @@ class Elements<T extends User> {
 
 const element = new Elements();
 element.addElement({ id: "88008800", username: "rezamazaheri" });
-element.printElement({ id: "88008800", username: "rezamazaheri" })
+element.printElement({ id: "88008800", username: "rezamazaheri" });
