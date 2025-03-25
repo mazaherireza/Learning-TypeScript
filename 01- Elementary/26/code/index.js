@@ -1,9 +1,9 @@
-"use strict";
-function information(user, name) {
-  console.log(`${user[name]}`);
+function information(user, key) {
+  console.log("".concat(user[key]));
 }
-const user = {
+var user = {
   firstName: "Reza",
   lastName: "Mazaheri",
 };
 information(user, "firstName");
+// keyof is a keyword in TS which is used to extract the key type from an object type.
