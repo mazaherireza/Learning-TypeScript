@@ -1,8 +1,7 @@
-"use strict";
-let x;
+var x;
 x = null;
-let y;
+var y;
 //y = 1001;
 y = undefined;
-const prenom = "Reza";
+var prenom = "Reza";
 console.log(prenom);

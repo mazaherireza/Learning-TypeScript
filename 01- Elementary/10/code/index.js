@@ -1,3 +1,2 @@
-"use strict";
-const x = "un";
-const y = 2;
+var x = "un";
+var y = 2;

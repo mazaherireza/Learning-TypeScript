@@ -1,5 +1,4 @@
-"use strict";
-let everything; // any
+var everything; // any
 everything = "Reza";
 everything = 35;
 everything = false;
