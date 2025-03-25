@@ -1,8 +1,7 @@
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  cursor: pointer;
 }
 
 main {
@@ -14,11 +13,11 @@ main {
 }
 
 #playground {
-  padding: 1em;
+  padding: 1rem;
 }
 
 #playground #playground-title {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 button {
