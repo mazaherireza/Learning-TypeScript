@@ -1,13 +1,18 @@
+enum Gender {
+  Male = "Male",
+  Female = "Female",
+}
+
 class Employee {
   firstname: string;
   lastname: string;
   position: string;
-  gender: string;
+  gender: Gender;
   constructor(
     firstname: string,
     lastname: string,
     position: string,
-    gender: string
+    gender: Gender
   ) {
     this.firstname = firstname;
     this.lastname = lastname;
@@ -16,7 +21,7 @@ class Employee {
   }
 
   salutation(this: Employee) {
-    if (this.gender == "Male") {
+    if (this.gender == Gender.Male) {
       console.log(`Salut!, Mr ${this.lastname}.`);
     } else {
       console.log(`Salut! Mrs ${this.lastname}.`);
@@ -24,5 +29,5 @@ class Employee {
   }
 }
 
-const emp = new Employee("Reza", "Mazaheri", "Frontend Developer", "Male");
+const emp = new Employee("Reza", "Mazaheri", "Frontend Developer", Gender.Male);
 emp.salutation();
