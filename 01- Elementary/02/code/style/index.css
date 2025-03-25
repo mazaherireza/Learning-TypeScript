@@ -2,7 +2,6 @@ body {
   min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  cursor: pointer;
 }
 
 main {
