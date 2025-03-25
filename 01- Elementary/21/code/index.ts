@@ -2,7 +2,7 @@ interface Func {
   (name: string): string;
 }
 
-const salutation = (name: string) => {
+const salutation: Func = (name: string) => {
   return `Salut ${name}!`;
 };
 
