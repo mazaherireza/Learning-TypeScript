@@ -7,7 +7,7 @@ abstract class Book {
     this.title = title;
     this.author = author;
   }
-  abstract getBookType(): string; // There is no implementation for the abstract method
+  abstract getBookType(): string; // There is no implementation for the abstract method.
 }
 
 class Ebook extends Book {
